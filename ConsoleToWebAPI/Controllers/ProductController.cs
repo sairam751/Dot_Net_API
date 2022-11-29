@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleToWebAPI.Controllers
 {
+    // it will explain the dependency injection
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleToWebAPI.Controllers
 {
+    //Used for dependency injection
     [ApiController]
     [Route("test/[action]")]
     public class TestController : ControllerBase

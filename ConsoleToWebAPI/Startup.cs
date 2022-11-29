@@ -16,11 +16,23 @@ namespace ConsoleToWebAPI
     {
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //Dependency Injection
+           /*
             services.AddControllers();
             services.AddTransient<CustomMiddleware1>();
+            services.AddSingleton<IProductRepository, TestRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>(); 
+            services.AddTransient<IProductRepository, TestRepository>();
+            services.TryAddSingleton<IProductRepository, ProductRepository>();
+            services.TryAddScoped<IProductRepository, ProductRepository>();
+            services.TryAddTransient<IProductRepository, ProductRepository>();
+           
+           */
 
-            
-            services.TryAddTransient<IProductRepository, TestRepository>();
+            // Without using try and if we add diff repository of same interface then it will override
+            // and with using add first time it will instantiate and second time it will skip
+            services.TryAddTransient<IProductRepository, TestRepository>(); 
             services.TryAddTransient<IProductRepository, ProductRepository>();
         }
 
